@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Shantell+Sans&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+
+  *{
+    font-family: 'Shantell Sans', cursive;
+  }
+body{
+    background-color: rgb(160, 200, 236);
+}
+h1{
+    font-size: 60px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.main{
+    background-color: whitesmoke;
+    height: 67vh;
+    width: 35vw;
+    margin:  auto;
+    /* padding: 10px 10px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 5%;
+}
+.main form input{
+    margin: 9px;
+    font-size: 16px;
+}
+.in{
+    width: 27vw;
+    height: 6vh;
+}
+.btn {
+    font-size: 25px;
+    border: none;
+    margin: 15px;
+    text-decoration:underline;
+    
+}
+.btn a{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.btn1{
+    font-size: 30px;
+    margin: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+}
+.btn1:hover{
+    color: rgb(10, 10, 11);
+    background-color: rgb(157, 215, 242);
+    width: 90px;
+    height: 33px;
+}
+@media only screen and (max-width: 500px) {
+    body {
+      background-color: rgb(235, 156, 86);
+    }
+    .main{
+        width: 70vw;
+    }
+    .main-body{
+        width: 80vw;
+        background-color: aquamarine;
+    }
+  }
+
+#bc{
+    background-color: rgb(235, 156, 86);
+}  
+.main-body{
+    background-color: whitesmoke;
+    height: 100%;
+    width: 50vw;
+    margin:  auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 5%;
+    padding: 5px;
+}
+.main-body h2{
+    font-size: 40px;
+}
+.main-body img{
+    height : 40vh;
+    border-radius: 50% 10%;
+    padding: 8px;
+}
+
+.light{
+    color: rgb(134, 130, 130);
+    font-size: 10px;
+    font-family: 'Righteous', cursive;
+    margin: 0;
+}
+.no{
+    margin: 0;
+    font-family: 'Alex Brush', cursive;
+    font-size: 35px;
+}
+.container table tbody tr{
+    background-color: rgb(241, 214, 154);
+    width: 100px;
+}
+.container table{
+    /* background-color: brown; */
+    width: 500px;
+    margin-bottom: 30px;
+}
+.p{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    border:1px solid rgb(215, 211, 211);
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+}
+.p input{
+    border: none;
+    font-size: 12px;
+    height: 35px;
+    width: 28vw;
+    margin: 5px;
+}
+.btn2{
+    position: relative;
+    left: 280%;
+    width: 80px;
+    height: 40px;
+    /* bottom: 1%; */
+}
+.btn3{
+    margin: 15px;
+}
+.font{
+    font-size: 30px;
+}

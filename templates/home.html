@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body id="bc">
+
+    <div class="main-body">
+        <h2> Welcome to the Task Manager</h2>
+        {% if data %}
+        <img src="../static/images/work.jpg" alt="" srcset="">
+        {% else %}
+        <img src="../static/images/chill.avif" alt="" srcset="">
+        {% endif %}
+        <p class="no"> There are {% if data %}{{num}}{% else %}no{% endif %} tasks for today </p>
+        
+        <div class="container">                        
+            {% if data %}
+            <h2>Your Tasks</h2>
+                <table id="myTable">
+                    <thead>
+                    <tr>
+                        <th> Description </th>
+                        <th> Due Date </th>
+                        <th> Priority </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for task in data %}
+                        <tr>
+                            <td>{{ task.description }}</td>
+                            <td>{{ task.due_date }}</td>
+                            <td>{{ task.priority }}</td><td><i onclick="remove({{task.task_id}}, this)" class="fa-solid fa-circle-minus"></i></td>
+                            
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                    <p> You have no tasks.</p>
+                {% endif %}    
+                </div>
+        <div>
+            <span class="font"> Create new task &nbsp;</span><span><i class="fa-solid fa-circle-plus"></i></span>
+            <form action="/add" method="post">
+                <p class="p"> <i class="fa-regular fa-square-plus"></i> &nbsp;<input type="text" name="description" required placeholder="Add description"></p>
+                <p class="p"> Due date:   <input type="date" id="date" name="due_date" required></p>
+                <label for="priority" class="p"><i class="fa-regular fa-star"></i>Priority:
+                    <select id="priority" class="p" name="priority" >
+                        <option value="low" class="p"><i class="fa-solid fa-temperature-low"></i> Low</option>
+                        <option value="medium" class="p"><i class="fa-regular fa-thumbs-up"></i> Medium</option>
+                        <option value="high" class="p"><i class="fa-solid fa-fire"></i> High</option>
+                    </select>
+                </label>
+                <input type="submit" class="btn3" value="Save">
+            </form>    
+        </div>
+        <form action="/logout">
+            <button class="btn2"> LogOut</button>
+        </form>
+        <!--  <i class="fa-regular fa-calendar-days"></i> -->
+    </div>
+    <script>
+        function remove(id, tag){
+            fetch(`/remove/${id}`);
+            var i = tag.parentNode.parentNode.rowIndex;
+            document.getElementById("myTable").deleteRow(i);
+            var count = document.getElementById("myTable").rows.length;
+            if(count < 2){
+                var table = document.getElementById("myTable");
+                document.getElementById("myTable").parentNode.removeChild(table);
+            }
+        }
+    </script>
+
+    <script src="https://kit.fontawesome.com/9f7e4b1004.js" crossorigin="anonymous"></script>
+</body>
+</html>
